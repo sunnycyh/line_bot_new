@@ -43,8 +43,7 @@ def callback(): #
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    p = '臭豬'
-    e = '你左食飯未'
+    pe = '臭豬, 你左食飯未'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=pe)) # event.message.text means the msg sent by the user

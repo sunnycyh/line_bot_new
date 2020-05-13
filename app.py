@@ -44,10 +44,14 @@ def callback(): #
 def handle_message(event):
     msg = event.message.text
     r = '唔識應你啊臭豬'
-    if msg == 'hi':
+    if msg in ['hi', 'Hi', 'HI']: # check the word is in the sentense or not
         r = 'hi臭豬'
     elif msg == '得唔得閒':
         r = '有咩屁話直接講'
+    elif msg == '你係邊個':
+        r = '知道我係邊個重要咩？你知唔知你自己係邊個？'
+    elif '？' in msg:
+        r = '我唔直接答你，有咩問題去搵整我出黎個條契弟'
 
     line_bot_api.reply_message(
         event.reply_token,

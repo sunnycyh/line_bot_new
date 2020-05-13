@@ -43,10 +43,15 @@ def callback(): #
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    pe = '臭豬, 你左食飯未'
+    r = '唔識應你啊臭豬'
+    if msg == 'hi':
+        r = 'hi臭豬'
+    elif msg == '得唔得閒':
+        r = '有咩屁話直接講'
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=pe)) # event.message.text means the msg sent by the user
+        TextSendMessage(text=r)) # event.message.text means the msg sent by the user
 
 
 if __name__ == "__main__": # to ensure the app.run()(main function) is only executed by the direct action instead of import
